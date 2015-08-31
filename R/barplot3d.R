@@ -17,16 +17,15 @@
 #' @import rgl
 #' @author Christopher Wardell \email{r@@cpwardell.com}
 #' @examples
-#' ## The vignette provides far more in-depth explanation and examples ##
+#' ## The included vignette provides far more in-depth explanation and examples ##
 #' blah blah blah
 
 ## To do:
 # y and x axes
-# background mesh
-# size of plot
+# background mesh; assemble with flat objects using rgl.quad()
+# size of plot (for reproducibility)
 # creation of png output
 # theta, phi and fov
-# theta, phi output?
 # Note: fills from left to right, front to back 
 # Check arguments are present and appropriate
 

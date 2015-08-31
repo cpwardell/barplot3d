@@ -35,7 +35,7 @@ Produces a 3D barplot using a numeric vector of values. The \code{\link{rgl}} pa
 Further details are available in the accompanying vignette.
 }
 \examples{
-## The vignette provides far more in-depth explanation and examples ##
+## The included vignette provides far more in-depth explanation and examples ##
 blah blah blah
 }
 \author{
