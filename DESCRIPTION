@@ -1,9 +1,15 @@
 Package: barplot3d
 Type: Package
-Title: What the package does (short line)
+Title: Plots 3D barplots
 Version: 1.0
 Date: 2015-08-31
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Christopher Wardell
+Maintainer: Christopher Wardell <github@cpwardell.com>
+Description: Plots 3D barplots
+VignetteBuilder: knitr
+Depends:
+    R (>= 3.0.0),
+    rgl
+Suggests:
+    knitr
+License: GPL-3
