@@ -4,7 +4,7 @@ Title: Plots 3D barplots
 Version: 1.0
 Date: 2015-08-31
 Author: Christopher Wardell
-Maintainer: Christopher Wardell <github@cpwardell.com>
+Maintainer: Christopher Wardell <r@cpwardell.com>
 Description: Plots 3D barplots
 VignetteBuilder: knitr
 Depends:
