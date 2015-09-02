@@ -18,8 +18,8 @@ singlecolumn=function(x,y,z,alpha=1,topcol="#078E53",sidecol="#aaaaaa",linecol="
   z1=c(rep(0,4),rep(c(0,0,z,z),4))
   y1=c(y[1],y[1],y[2],y[2],rep(y[1],4),rep(y[2],4),rep(c(y[1],y[2],y[2],y[1]),2))
   x2=c(rep(c(x[1],x[1],x[2],x[2]),2),rep(c(x[1],x[2],rep(x[1],3),rep(x[2],3)),2))
-  z2=c(rep(c(0,z),4),rep(0,8),rep(z,8) )
-  y2=c(rep(y[1],4),rep(y[2],4),rep(c(rep(y[1],3),rep(y[2],3),y[1],y[2]),2) )
+  z2=c(rep(c(0,z),4),rep(0,8),rep(z,8))
+  y2=c(rep(y[1],4),rep(y[2],4),rep(c(rep(y[1],3),rep(y[2],3),y[1],y[2]),2))
   
   ## These lines create the sides of the column and its coloured top surface
   rgl.quads(x1,z1,y1,col=rep(sidecol,each=4),alpha=alpha,lit=FALSE)
@@ -27,6 +27,7 @@ singlecolumn=function(x,y,z,alpha=1,topcol="#078E53",sidecol="#aaaaaa",linecol="
             col=rep(topcol,each=4),alpha=1,lit=FALSE) 
   ## This line adds black edges to the column
   rgl.lines(x2,z2,y2,col=linecol,lit=FALSE)
+  
 }
 # Example:
 # stackplot.3d(c(0,1),c(0,1),3,alpha=0.6)

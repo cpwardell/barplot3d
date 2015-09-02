@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.31)  31 AUG 2015 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.31)  2 SEP 2015 11:16
 entering extended mode
 **barplot3d_vignette.tex
 (barplot3d_vignette.tex
@@ -496,18 +496,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (barplot3d_vignette.toc)
 \tf@toc=\write5
  [2]
-Package color Info: Redefining color shadecolor on input line 138.
- [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
+Overfull \hbox (126.41486pt too wide) in paragraph at lines 123--125
+[]\OT1/cmr/m/n/10 You can man-u-ally edit the size/position of the win-dow us-i
+ng com-mands like this: par3d(windowRect=c(2004,866,2260,1122)) 
+ []
+
+Package color Info: Redefining color shadecolor on input line 152.
+[3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
  (barplot3d_vignette.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 Package rerunfilecheck Info: File `barplot3d_vignette.out' has not changed.
 (rerunfilecheck)             Checksum: 0D4B870DC6FB7AD7EB1EEC736C6C3003;544.
 Package logreq Info: Writing requests to 'barplot3d_vignette.run.xml'.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
  10173 strings out of 493698
@@ -516,7 +521,7 @@ Here is how much of TeX's memory you used:
  13385 multiletter control sequences out of 15000+200000
  8878 words of font info for 32 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 37i,6n,48p,924b,1012s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,6n,48p,924b,965s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiK
@@ -526,7 +531,7 @@ pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 t10.pfb>
-Output written on barplot3d_vignette.pdf (4 pages, 126669 bytes).
+Output written on barplot3d_vignette.pdf (4 pages, 129598 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)

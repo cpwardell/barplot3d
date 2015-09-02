@@ -10,6 +10,9 @@
 #' @param alpha       Numeric value determining the transparency of all column sides. Ranges beween 0 (invisible) and 1 (opaque)
 #' @param colors      Colour of columns.  Either a single colour or a character vector of colours, one for each column
 #' @param linecol     Colour of edges of columns. A single colour.
+#' @param theta       Polar coordinate (i.e. viewing angle) to be passed to rgl.viewpoint()
+#' @param phi         Polar coordinate (i.e. viewing angle) to be passed to rgl.viewpoint()
+#' @param fov         Field of view angle in degrees to be passed to rgl.viewpoint()
 #' @details Produces a 3D barplot using a numeric vector of values. The \code{\link{rgl}} package is used to draw the plots.
 #' Further details are available in the accompanying vignette.
 #' @return Draws 3D barplot; only the most recent object IDs will be returned.
@@ -23,15 +26,11 @@
 ## To do:
 # y and x axes
 # background mesh; assemble with flat objects using rgl.quad()
-# size of plot (for reproducibility)
-# creation of png output
-# theta, phi and fov
-# Note: fills from left to right, front to back 
 # Check arguments are present and appropriate
 
 ## Calls singlecolumn repeatedly to create a barplot
 ## z is the heights of the columns and must be an appropriately named vector
-barplot3d=function(z,dimensions,scalexy=1,scalez=1,gap=0.2,alpha=1,colors=NA,linecol="black"){
+barplot3d=function(z,dimensions,xlabels=names(z),yscale="front",scalexy=1,scalez=1,gap=0.2,alpha=1,colors=NA,linecol="black",theta=15,phi=15,fov=0){
   
   ## These lines allow the active rgl device to be updated with multiple changes
   ## This is necessary to add each column sequentially
@@ -70,9 +69,24 @@ barplot3d=function(z,dimensions,scalexy=1,scalez=1,gap=0.2,alpha=1,colors=NA,lin
                    linecol=linecol)
     }
   }
-  ## Set the viewpoint and add axes and labels
-  rgl.viewpoint(theta=50,phi=40,fov=0)
-  axes3d("y-+",labels=TRUE,col="black")
+  ## Set the viewpoint
+  rgl.viewpoint(theta=theta,phi=phi,fov=fov)
+    
+  ## Add axes and labels
+  # Vertical axis
+  if(yscale=="front"){
+    axes3d("y-+",labels=TRUE,col="black") # left front best for single row
+  }
+  if(yscale=="back"){
+    axes3d("y--",labels=TRUE,col="black") # left back best for multi-row
+  }
+  
+  # Front axis
+  axes3d("x-+",labels=xlabels,nticks=dimensions[1])
+  
+  # Side axis
+  #axes3d("z--",labels=FALSE,col="black",nticks=dimensions[2])
+      
 }
 # Example:
 # context3d(counts)

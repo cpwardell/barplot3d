@@ -4,8 +4,9 @@
 \alias{barplot3d}
 \title{Barplot 3D}
 \usage{
-barplot3d(z, dimensions, scalexy = 1, scalez = 1, gap = 0.2, alpha = 1,
-  colors = NA, linecol = "black")
+barplot3d(z, dimensions, xlabels = names(z), yscale = "front",
+  scalexy = 1, scalez = 1, gap = 0.2, alpha = 1, colors = NA,
+  linecol = "black", theta = 15, phi = 15, fov = 0)
 }
 \arguments{
 \item{z}{Numeric vector of the heights of each column}
@@ -23,6 +24,12 @@ barplot3d(z, dimensions, scalexy = 1, scalez = 1, gap = 0.2, alpha = 1,
 \item{colors}{Colour of columns.  Either a single colour or a character vector of colours, one for each column}
 
 \item{linecol}{Colour of edges of columns. A single colour.}
+
+\item{theta}{Polar coordinate (i.e. viewing angle) to be passed to rgl.viewpoint()}
+
+\item{phi}{Polar coordinate (i.e. viewing angle) to be passed to rgl.viewpoint()}
+
+\item{fov}{Field of view angle in degrees to be passed to rgl.viewpoint()}
 }
 \value{
 Draws 3D barplot; only the most recent object IDs will be returned.
