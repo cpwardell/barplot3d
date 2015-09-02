@@ -27,7 +27,6 @@ singlecolumn=function(x,y,z,alpha=1,topcol="#078E53",sidecol="#aaaaaa",linecol="
             col=rep(topcol,each=4),alpha=1,lit=FALSE) 
   ## This line adds black edges to the column
   rgl.lines(x2,z2,y2,col=linecol,lit=FALSE)
-  
 }
 # Example:
 # stackplot.3d(c(0,1),c(0,1),3,alpha=0.6)

@@ -2,8 +2,10 @@
 #'
 #' Creates 3D barplots, with many configurable options. For detailed usage, please read the accompanying vignette.
 #' 
-#' @param z Numeric vector of the heights of each column
+#' @param z           Numeric vector or data.frame containing the heights of each column. See details for usage
 #' @param dimensions  Numeric vector of length two; the number of rows and columns of the base of the plot
+#' @param xlabels     Labels for the x axis
+#' @param ylabels     Labels for the y axis
 #' @param scalexy     Numeric value used to scale the x and y coordinates (i.e. the "fatness" of the columns). Also scales the gap between columns
 #' @param scalez      Numeric value used to scale the z input vector. Useful for playing with data, but not recommended
 #' @param gap         Numeric value determining the gap between columns; this gap is identical in the x and y dimensions
@@ -24,18 +26,20 @@
 #' blah blah blah
 
 ## To do:
-# y and x axes
 # background mesh; assemble with flat objects using rgl.quad()
 # Check arguments are present and appropriate
 
 ## Calls singlecolumn repeatedly to create a barplot
 ## z is the heights of the columns and must be an appropriately named vector
-barplot3d=function(z,dimensions,xlabels=names(z),yscale="front",scalexy=1,scalez=1,gap=0.2,alpha=1,colors=NA,linecol="black",theta=15,phi=15,fov=0){
+barplot3d=function(z,dimensions=NA,xlabels=NA,ylabels=NA,scalexy=1,scalez=1,gap=0.2,alpha=1,colors=NA,linecol="black",theta=15,phi=15,fov=0){
   
-  ## These lines allow the active rgl device to be updated with multiple changes
-  ## This is necessary to add each column sequentially
-  save <- par3d(skipRedraw=TRUE)
-  on.exit(par3d(save))
+  ## Determine dimensions of plot
+  if(is.numeric(z) & length(dimensions)==1){
+    stop("If input is a numeric vector, you must include the desired dimensions of the plot")
+  }
+  if(is.data.frame(z) & length(dimensions)==1){
+    dimensions=c(ncol(z),nrow(z))
+  }
   
   ## Scale column area and the gap between columns 
   y=seq(1,dimensions[1])*scalexy
@@ -45,6 +49,25 @@ barplot3d=function(z,dimensions,xlabels=names(z),yscale="front",scalexy=1,scalez
   ## Scale z coordinate
   z=z*scalez
   
+  ## Set axes names if not already set
+  if(is.data.frame(z) & length(xlabels)==1){
+    xlabels=rownames(z)
+  }
+  if(is.numeric(z) & length(xlabels)==1){
+    xlabels=seq(1,dimensions[2])
+  }
+  if(is.data.frame(z) & length(ylabels)==1){
+    ylabels=colnames(z)
+  }
+  if(is.numeric(z) & length(ylabels)==1){
+    ylabels=seq(1,dimensions[1])
+  }
+  
+  ## Cast z to a vector if it's a data.frame
+  if(is.data.frame(z)){
+    z=unlist(unlist(as.data.frame(t(z))))
+  }
+    
   ## Set up colour palette if no colours supplied in arguments
   ## If no colour is supplied, the default is green
   ## If a single colour is supplied it will be applied to all columns
@@ -52,10 +75,15 @@ barplot3d=function(z,dimensions,xlabels=names(z),yscale="front",scalexy=1,scalez
     if(is.na(colors)){
       colors=rep("#078E53",length(z))
     }else{
-      colors=rep(color,length(z))
+      colors=rep(colors,length(z))
     }
   }
     
+  ## These lines allow the active rgl device to be updated with multiple changes
+  ## This is necessary to add each column sequentially
+  save <- par3d(skipRedraw=TRUE)
+  on.exit(par3d(save))
+  
   ## Plot each of the columns
   for(i in 1:dimensions[1]){
     for(j in 1:dimensions[2]){
@@ -74,24 +102,18 @@ barplot3d=function(z,dimensions,xlabels=names(z),yscale="front",scalexy=1,scalez
     
   ## Add axes and labels
   # Vertical axis
-  if(yscale=="front"){
+  if(dimensions[1]==1){
     axes3d("y-+",labels=TRUE,col="black") # left front best for single row
-  }
-  if(yscale=="back"){
+  }else{
     axes3d("y--",labels=TRUE,col="black") # left back best for multi-row
+    # Side axis
+    axes3d("z--",labels=ylabels,col="black",nticks=dimensions[1])
   }
-  
   # Front axis
-  axes3d("x-+",labels=xlabels,nticks=dimensions[1])
-  
-  # Side axis
-  #axes3d("z--",labels=FALSE,col="black",nticks=dimensions[2])
-      
+  axes3d("x-+",labels=xlabels,col="black",nticks=dimensions[2])
 }
 # Example:
 # context3d(counts)
-
-
 
 #### END OF FUNCTIONS
 

@@ -4,14 +4,18 @@
 \alias{barplot3d}
 \title{Barplot 3D}
 \usage{
-barplot3d(z, dimensions, xlabels = names(z), yscale = "front",
-  scalexy = 1, scalez = 1, gap = 0.2, alpha = 1, colors = NA,
-  linecol = "black", theta = 15, phi = 15, fov = 0)
+barplot3d(z, dimensions = NA, xlabels = NA, ylabels = NA, scalexy = 1,
+  scalez = 1, gap = 0.2, alpha = 1, colors = NA, linecol = "black",
+  theta = 15, phi = 15, fov = 0)
 }
 \arguments{
-\item{z}{Numeric vector of the heights of each column}
+\item{z}{Numeric vector or data.frame containing the heights of each column. See details for usage}
 
 \item{dimensions}{Numeric vector of length two; the number of rows and columns of the base of the plot}
+
+\item{xlabels}{Labels for the x axis}
+
+\item{ylabels}{Labels for the y axis}
 
 \item{scalexy}{Numeric value used to scale the x and y coordinates (i.e. the "fatness" of the columns). Also scales the gap between columns}
 
