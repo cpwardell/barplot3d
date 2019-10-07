@@ -1,6 +1,6 @@
 # 3dbarplot
 
-R package for creating 3D barplots.
+R package for creating 3D barplots. Read the documentation or included vignette for full details.
 
 Easily make beautiful 3D barplots like this:
 
