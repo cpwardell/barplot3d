@@ -1,2 +1,5 @@
-# barplot3d
-An R package for creating 3D barplots
+# 3dbarplot
+
+R package for creating 3D barplots.  Releasing on CRAN shortly.
+
+

@@ -1,15 +1,17 @@
 Package: barplot3d
 Type: Package
-Title: Plots 3D barplots
-Version: 1.0
-Date: 2015-08-31
-Author: Christopher Wardell
-Maintainer: Christopher Wardell <r@cpwardell.com>
-Description: Plots 3D barplots
+Title: Create 3D barplots
+Version: 0.1.0
+Authors@R: person("Christopher", "Wardell", email="r@cpwardell.com", role=c("aut","cre"))
+Description: Create 3D barplots using the rgl package
+    Includes a function to create sequence context "lego plots" for bioinformatic analysis of sequencing data.
+License: Apache License 2.0 | file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+  rgl
+RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown
 VignetteBuilder: knitr
-Depends:
-    R (>= 3.0.0),
-    rgl
-Suggests:
-    knitr
-License: GPL-3
