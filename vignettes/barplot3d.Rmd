@@ -161,7 +161,7 @@ All 3D barplots are isometric projections to minimize the potentially misleading
 is controlled by the "theta" and "phi" parameters. Experiment with these until you find something you like.
 
 * "theta" rotates the viewpoint in the horizontal plane (imagine it on a rotating turntable) and can be set between 0 and 360 degrees.
-* "phi" rotates the viewpoint in hte vertical plane (imagine going below and above the plot) and can be set between -90 to 90 (-90 is directly below, 90 directly above).
+* "phi" rotates the viewpoint in the vertical plane (imagine going below and above the plot) and can be set between -90 to 90 (-90 is directly below, 90 directly above).
 
 The plot size is determined by the par3d() function. Again, you will have to experiment to find the right settings that make your plot and labels 
 fully visible.  The 4 arguments are the position (in pixels) of the left, top, right and bottom edges of the rgl viewing window. e.g. par3d(windowRect=c(0,50,600,450)) leads to plot that is 600 pixels wide and 400 pixels tall.
@@ -173,10 +173,10 @@ rgl.snapsnot("filename.png") is used to save the current RGL view. Note that _on
 Three components of each bar can be colored, and these colors are independent. Each should either be a vector of length 1 (which will be applied to all bars) or a vector the same length as the input data; colors will be recycled if not enough are supplied. Colors can be specified in any way that R natively understands e.g. a simple word such as "red", an integer or a hexadecimal RGB color, like that returned by rgb() e.g. "#aaaaaa".
 
 1. "topcolors" specifies the colors of the top of each bar (default is black)
-2. "sidecolors" specifies the colors of the sides of each bar (default is grey)
+2. "sidecolors" specifies the colors of the sides of each bar (default is gray)
 3. "linecolors" specifies the colors of the edges of each bar (default is black)
 
-Transparency of the sides of the bars can be set using the "alpha" parameter. 0 is completely transparent (i.e. a "wireframe" effect) and 1 (the default) is completely opaque. This can be useful when taller bars hide shorter bars, but if used you may want a neutral color like grey so that the topcolors are not altered by the partically transparent colored bar in front of them.
+Transparency of the sides of the bars can be set using the "alpha" parameter. 0 is completely transparent (i.e. a "wireframe" effect) and 1 (the default) is completely opaque. This can be useful when taller bars hide shorter bars, but if used you may want a neutral color like gray so that the topcolors are not altered by the partially transparent colored bar in front of them.
 
 ```{r}
 ## Plot a partially transparent 3D barplot
