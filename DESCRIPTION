@@ -1,10 +1,10 @@
 Package: barplot3d
 Type: Package
-Title: Create 3D barplots
+Title: Create 3D Barplots
 Version: 1.0.0
 Authors@R: person("Christopher", "Wardell", email="r@cpwardell.com", role=c("aut","cre"))
-Description: Create 3D barplots using the rgl package
-    Includes a function to create sequence context "lego plots" for bioinformatic analysis of sequencing data.
+Description: Create 3D barplots
+    Includes a function to create sequence context plots for analysis of DNA sequencing data.
 License: Apache License 2.0 | file LICENSE
 Encoding: UTF-8
 LazyData: true

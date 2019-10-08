@@ -2,7 +2,7 @@
 % Please edit documentation in R/legoplot.R
 \name{legoplot3d}
 \alias{legoplot3d}
-\title{A wrapper function to create a sequence context "lego plot"}
+\title{A wrapper function to create a sequence context "legoplot"}
 \usage{
 legoplot3d(contextdata, alpha = 1, scalexy = 1, gap = 0.2,
   sixcolors = "broad", theta = 50, phi = 40, gridlines = TRUE,
@@ -35,13 +35,15 @@ legoplot3d(contextdata, alpha = 1, scalexy = 1, gap = 0.2,
 Nothing is returned (invisibly returns NULL).
 }
 \description{
-A wrapper function to create a sequence context "lego plot"
+A wrapper function to create a sequence context "legoplot"
 }
 \examples{
+\dontrun{
 # Read in COSMIC signature probabilities
 x=system.file("extdata", "signature_probabilities.txt", package = "barplot3d")
 sigdata=read.table(x,header=TRUE,stringsAsFactors = FALSE)
 # Plot signature 2 with Sanger colors and some transparency so we can see all bars
 legoplot3d(contextdata=sigdata$Signature_2,labels=TRUE,scalexy=0.05,sixcolors="sanger",
 alpha=0.4,zsub="Probability")
+}
 }

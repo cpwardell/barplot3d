@@ -1,4 +1,4 @@
-#' A wrapper function to create a sequence context "lego plot"
+#' A wrapper function to create a sequence context "legoplot"
 #' @param contextdata A numeric vector of counts or frequencies of the 96 possible somatic mutations and trinucleotide contexts. These MUST be in the same order as in the example (see example and/or vignette).
 #' @param alpha The alpha channel (transparency) of the sides of 3D bars. Range 0-1.
 #' @param scalexy Scaling factor for x and y coordinates; this constant can be used to make the plot "skinnier" or "fatter".
@@ -12,12 +12,14 @@
 #' @param zsub Descriptive label for the z axis.
 #' @return Nothing is returned (invisibly returns NULL).
 #' @examples
+#' \dontrun{
 #' # Read in COSMIC signature probabilities
 #' x=system.file("extdata", "signature_probabilities.txt", package = "barplot3d")
 #' sigdata=read.table(x,header=TRUE,stringsAsFactors = FALSE)
 #' # Plot signature 2 with Sanger colors and some transparency so we can see all bars
 #' legoplot3d(contextdata=sigdata$Signature_2,labels=TRUE,scalexy=0.05,sixcolors="sanger",
 #' alpha=0.4,zsub="Probability")
+#' }
 #' @export
 legoplot3d<-function(contextdata,alpha=1,scalexy=1,gap=0.2,sixcolors="broad",
                     theta=50,phi=40,gridlines=TRUE,labels=FALSE,zlabels=TRUE,zsub=FALSE){

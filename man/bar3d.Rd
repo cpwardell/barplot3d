@@ -29,5 +29,7 @@ Nothing is returned (invisibly returns NULL).
 Adds a single 3D bar to the current scene
 }
 \examples{
+\dontrun{
 bar3d(c(0,1),c(0,1),3,alpha=0.6,topcol="#078E53",sidecol="#aaaaaa",linecol="#000000")
+}
 }

@@ -5,14 +5,14 @@ R package for creating 3D barplots. Read the documentation or included vignette 
 Easily make beautiful 3D barplots like this:
 
 <p align="center">
-  <img src="/vignettes/pretty.png">
+  <img src="man/figures/pretty.png">
 </p>
 
 Includes an easy-to-use wrapper function for making "legoplots" of mutation/trinucleotide context data like this:
 
 <p align="center">
-  <img src="/vignettes/sig2sanger.png">
-  <img src="/vignettes/sig8broad.png">
+  <img src="man/figures/sig2sanger.png">
+  <img src="man/figures/sig8broad.png">
 </p>
 
 

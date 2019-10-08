@@ -58,6 +58,8 @@ Nothing is returned (invisibly returns NULL).
 Adds a 3D bar plot to the current RGL scene
 }
 \examples{
+\dontrun{
 barplot3d(rows=3,cols=5,z=1:12,topcolors=rainbow(12),alpha=0.7,scalexy=10,
 xlabels=c("One","Two","Three","Four","Five"),ylabels=LETTERS[1:3])
+}
 }
