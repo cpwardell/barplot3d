@@ -38,12 +38,13 @@ Nothing is returned (invisibly returns NULL).
 A wrapper function to create a sequence context "legoplot"
 }
 \examples{
-\dontrun{
+\dontshow{
+options(rgl.useNULL=TRUE)
+}
 # Read in COSMIC signature probabilities
 x=system.file("extdata", "signature_probabilities.txt", package = "barplot3d")
 sigdata=read.table(x,header=TRUE,stringsAsFactors = FALSE)
 # Plot signature 2 with Sanger colors and some transparency so we can see all bars
 legoplot3d(contextdata=sigdata$Signature_2,labels=TRUE,scalexy=0.05,sixcolors="sanger",
 alpha=0.4,zsub="Probability")
-}
 }

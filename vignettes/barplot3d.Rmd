@@ -19,6 +19,13 @@ knitr::opts_chunk$set(
 
 ```{r echo=FALSE}
 set.seed(111)
+## Detect if we're on Linux; if so, set the rgl device to NULL
+## to prevent segfaults on Ubuntu on rhub
+sysinfo=Sys.info()
+if(sysinfo["sysname"]%in%"Linux"){
+  options(rgl.useNULL=TRUE)
+}
+
 ```
 
 ## Introduction

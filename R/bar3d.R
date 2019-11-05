@@ -9,9 +9,10 @@
 #' @param linecol The color of the edges of the bar. Text description or be a hexadecimal RGB color, like that returned by rgb() e.g. "black" or "#000000"
 #' @return Nothing is returned (invisibly returns NULL).
 #' @examples
-#' \dontrun{
-#' bar3d(c(0,1),c(0,1),3,alpha=0.6,topcol="#078E53",sidecol="#aaaaaa",linecol="#000000")
+#' \dontshow{
+#' options(rgl.useNULL=TRUE)
 #' }
+#' bar3d(c(0,1),c(0,1),3,alpha=0.6,topcol="#078E53",sidecol="#aaaaaa",linecol="#000000")
 #' @export
 bar3d<-function(x=c(0,1),y=c(0,1),z,alpha=1,topcol="#078E53",sidecol="#aaaaaa",linecol="#000000"){
 

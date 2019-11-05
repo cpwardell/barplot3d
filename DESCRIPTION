@@ -1,10 +1,9 @@
 Package: barplot3d
 Type: Package
 Title: Create 3D Barplots
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: person("Christopher", "Wardell", email="r@cpwardell.com", role=c("aut","cre"))
-Description: Create 3D barplots
-    Includes a function to create sequence context plots for analysis of DNA sequencing data.
+Description: Creates 3D barplots. Includes a function for sequence context plots used in DNA sequencing analysis.
 License: Apache License 2.0 | file LICENSE
 Encoding: UTF-8
 LazyData: true

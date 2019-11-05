@@ -21,10 +21,11 @@
 #' @param zsub Descriptive label for the z axis.
 #' @return Nothing is returned (invisibly returns NULL).
 #' @examples
-#' \dontrun{
+#' \dontshow{
+#' options(rgl.useNULL=TRUE)
+#' }
 #' barplot3d(rows=3,cols=5,z=1:12,topcolors=rainbow(12),alpha=0.7,scalexy=10,
 #' xlabels=c("One","Two","Three","Four","Five"),ylabels=LETTERS[1:3])
-#' }
 #' @export
 barplot3d<-function(rows,cols,x,y,z,alpha=1,scalexy=1,gap=0.2,topcolors=c("#000000"),sidecolors=c("#aaaaaa"),linecolors=c("#000000"),
                     theta=50,phi=40,gridlines=TRUE,xlabels=FALSE,ylabels=FALSE,zlabels=TRUE,xsub=FALSE,ysub=FALSE,zsub=FALSE){
