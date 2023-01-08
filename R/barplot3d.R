@@ -87,7 +87,7 @@ barplot3d<-function(rows,cols,x,y,z,alpha=1,scalexy=1,gap=0.2,topcolors=c("#0000
     }
   }
   ## Set the viewpoint
-  rgl::rgl.viewpoint(theta=theta,phi=phi,fov=0)
+  rgl::view3d(theta=theta,phi=phi,fov=0)
 
   ## If desired, add grid lines, axes labels and axes subtitles
   if(gridlines){
