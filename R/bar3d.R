@@ -30,10 +30,10 @@ bar3d<-function(x=c(0,1),y=c(0,1),z,alpha=1,topcol="#078E53",sidecol="#aaaaaa",l
   y2=c(rep(y[1],4),rep(y[2],4),rep(c(rep(y[1],3),rep(y[2],3),y[1],y[2]),2) )
 
   ## These lines create the sides of the column and its colored top surface
-  rgl::rgl.quads(x1,z1,y1,col=rep(sidecol,each=4),alpha=alpha,lit=FALSE)
-  rgl::rgl.quads(c(x[1],x[2],x[2],x[1]),rep(z,4),c(y[1],y[1],y[2],y[2]),
+  rgl::quads3d(x1,z1,y1,col=rep(sidecol,each=4),alpha=alpha,lit=FALSE)
+  rgl::quads3d(c(x[1],x[2],x[2],x[1]),rep(z,4),c(y[1],y[1],y[2],y[2]),
             col=rep(topcol,each=4),alpha=1,lit=FALSE)
   ## Add colored edges to the column
-  rgl::rgl.lines(x2,z2,y2,col=linecol,lit=FALSE)
+  rgl::segments3d(x2,z2,y2,col=linecol,lit=FALSE)
   invisible()
 }

@@ -127,7 +127,7 @@ par3d(windowRect=c(0,50,600,450))
 rgl.snapsnot("filename.png")
 
 # If running multiple plots, you should close the viewing window
-rgl.close()
+close3d()
 ```
 
 ## Colors and transparency
